@@ -1,0 +1,18 @@
+enable
+configure terminal
+line console 0
+password senhasegura
+login
+exit
+enable secret senhaenable
+service password-encryption
+banner motd ACESSO APENAS PARA PESSOAS AUTORIZADAS
+interface vlan1
+ip address 192.168.0.254 255.255.255.0
+no shutdown
+description INTERFACE DE GERENCIAMENTO
+exit
+line vty 0 15
+password senhadavty
+login
+do wr
